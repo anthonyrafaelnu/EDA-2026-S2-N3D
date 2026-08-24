@@ -12,8 +12,10 @@ public class Practico1 {
 //        System.out.println("b: " + b); // 6 5
 
         //cantParesYProm2(2, 10); // 5,5 : 4 números
-        primerosNImpares(5);
+        //primerosNImpares(5);
         
+        // "Hola" "Hola" "Hola" "Hola" "Hola" "Hola"
+        imprimirNumero(1523);
     }
     
     private static void mostrarSumaImpares(){
@@ -40,7 +42,7 @@ public class Practico1 {
         System.out.println("Resultado: " + suma);
     }
     
-    private static void cantParesYProm(int num1, int num2){
+    private static void cantParesYProm(int num1, int num2){ // O(n)
         double prom = (num1 + num2) / 2.0;
         
         int cantPares = 0;
@@ -69,19 +71,19 @@ public class Practico1 {
         
     }
     
-    private static void cantParesYProm2(int num1, int num2){
-        int result = Math.abs(num1 - num2);
+    private static void cantParesYProm2(int num1, int num2){ // O(5) = O(1*5) = O(1)
+        int result = Math.abs(num1 - num2); // O(1)
         
-        if(result % 2 == 0){
+        if(result % 2 == 0){ // O(1)
             result /= 2;
         }else{
             result = (result-1) / 2;
         }
         
-        if(num1 % 2 == 0) result++;
-        else if(num2 % 2 == 0) result++;
+        if(num1 % 2 == 0) result++; // O(1)
+        else if(num2 % 2 == 0) result++; // O(1)
         
-        System.out.println(result);
+        System.out.println(result); // O(1)
     }
 
     // Si recibo n=5
@@ -96,4 +98,17 @@ public class Practico1 {
         }
         System.out.println("");
     }
+
+    private static void imprimirNumero(int n){
+        String num = n + "";
+        //String num = String.valueOf(n);
+        
+        
+        for (int i = 0; i < num.length(); i++) {
+            System.out.print(num.charAt(i) + " ");
+        }
+        
+        System.out.println("");
+    }
+
 }
