@@ -15,7 +15,10 @@ public class Practico1 {
         //primerosNImpares(5);
         
         // "Hola" "Hola" "Hola" "Hola" "Hola" "Hola"
-        imprimirNumero(1523);
+        //imprimirNumero(1523);
+        
+        //System.out.println(esPalindromo("oso"));
+        //fibonacci(11); // 8
     }
     
     private static void mostrarSumaImpares(){
@@ -110,5 +113,38 @@ public class Practico1 {
         
         System.out.println("");
     }
+    
+    private static boolean esPalindromo(String palabra){ // O(n)
+        
+        String palabraInvertida = ""; // O(1)
+        
+        for (int i = palabra.length() - 1; i >= 0 ; i--) {  // O(n)
+            palabraInvertida += palabra.charAt(i);  // O(1)
+        }
+        
+        return palabra.equals(palabraInvertida);  // O(n)
+    }
 
+    private static boolean esPalindromoV2(String palabra){// O(n)
+        boolean esPalindroma = true; // O(1)
+        
+        for (int i = 0; i < palabra.length() / 2 && esPalindroma; i++) { // O(n/2)
+            if(palabra.charAt(i) != palabra.charAt(palabra.length() - 1 - i)) esPalindroma = false;  // O(1)
+        }
+        
+        return esPalindroma; // O(1)
+    }
+    
+    private static void fibonacci(int n){
+        int a = 0;
+        int b = 1;
+        int sum = 0;
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            sum = a+b; // 2
+            a = b; // 1
+            b = sum; // 2
+        }
+    }
 }
