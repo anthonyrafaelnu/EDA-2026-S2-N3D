@@ -10,11 +10,13 @@ public class Practico2 {
 //        System.out.println(Persona.sumar(2, 3));
 //        System.out.println(p1.sumar(2, 3));
 
-        Socio s1 = new Socio("socio1");
-        Socio s2 = new Socio("socio2");
-        
-        System.out.println(s1);
-        System.out.println(s2);
+//        Socio s1 = new Socio("socio1");
+//        Socio s2 = new Socio("socio2");
+//        
+//        System.out.println(s1);
+//        System.out.println(s2);
+
+        Persona p1 = new Persona();
     }
     
 }
