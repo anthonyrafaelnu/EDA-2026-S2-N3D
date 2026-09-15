@@ -25,9 +25,11 @@ public class Practico3 {
         //System.out.println("Pos mínima: " + minPosV2(array, posDesde, posHasta));
         //System.out.println(posDesde);
         
-        System.out.println("Array desordenado: " + mostrarv(array));
-        ordenarVec2(array);
-        System.out.println("Array ordenado: " + mostrarv(array));
+//        System.out.println("Array desordenado: " + mostrarv(array));
+//        ordenarVec2(array);
+//        System.out.println("Array ordenado: " + mostrarv(array));
+
+        System.out.println(mostrarv(array));
     }
     
     /*
@@ -37,7 +39,7 @@ public class Practico3 {
              separados por un " - ".
              El último número no debe tener un " - "  a la derecha.
     */
-    public static String mostrarv(int []v){
+    public static String mostrarv(int[] v){
         
         String ret = "";
         
