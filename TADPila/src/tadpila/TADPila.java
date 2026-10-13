@@ -1,21 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tadpila;
 
-/**
- *
- * @author rafae
- */
 public class TADPila {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Pila p = new Pila();
+        
+        p.push(2);
+        p.push(4);
+        p.push(1);
+        p.push(9);
+        
+        System.out.println("Pertenece: " + pertenece(p, 4));
+        
+//        p.pop();
+        p.mostrar();
+//        System.out.println("Elemento: " + p.top());
+    }
+    
+    public static boolean pertenece(Pila p, int n){
+        boolean esta = false;
+        Pila aux = new Pila();
+        
+        while(!p.esVacia() && !esta){
+            int dato = (int)p.top();
+            if(dato == n){
+                esta = true;
+            }else{
+                aux.push(dato);
+                p.pop();
+            }
+        }
+        
+        while(!aux.esVacia()){
+            int dato = (int)aux.top();
+            p.push(dato);
+            aux.pop();
+        }
+        
+        return esta;
     }
     
 }
