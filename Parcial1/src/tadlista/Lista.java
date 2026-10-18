@@ -287,4 +287,58 @@ public class Lista<T extends Comparable> implements ILista<T> {
         }
         return false;
     }
+    
+    public boolean elemConsecutivos (int valor1, int valor2){
+        if(this.inicio == null || this.inicio.getSiguiente() == null) return false;
+        
+        Nodo aux = this.inicio;
+        
+        // voy hasta el penúltimo nodo
+        while(aux.getSiguiente() != null){
+            if(sonIguales(valor1, valor2, (int)aux.getDato(), (int)aux.getSiguiente().getDato())){
+                return true;
+            }
+            aux = aux.getSiguiente();
+        }
+        
+        return false;
+    }
+    
+    public boolean sonIguales(int valor1, int valor2, int valorNodo1, int valorNodo2){
+        return valor1 == valorNodo1 && valor2 == valorNodo2 ||
+           valor1 == valorNodo2 && valor2 == valorNodo1;
+    }
+    
+    public Lista mayoresQue(int valor){
+        Nodo aux = this.inicio;
+        Lista ret = new Lista();
+        
+        while(aux != null){
+            if((int)aux.getDato() > valor){
+                ret.agregarFinal(valor);
+            }
+            aux = aux.getSiguiente();
+        }
+        
+        return ret;
+    }
+    
+    public void eliminarUltimo(){
+        if(this.inicio != null){
+            if(this.inicio.getSiguiente() == null){ // Hay un nodo solo
+                this.inicio = null;
+                this.fin = null;
+            }else{
+                Nodo aux = this.inicio;
+                
+                // Me paro en el penúltimo nodo, para eliminar el último
+                while(aux.getSiguiente().getSiguiente() != null){
+                    aux = aux.getSiguiente();
+                }
+                
+                aux.setSiguiente(null);
+                this.fin = aux;
+            }
+        }
+    }
 }
